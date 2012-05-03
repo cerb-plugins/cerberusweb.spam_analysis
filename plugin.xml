@@ -28,7 +28,7 @@
 
 		<!-- Ticket Tabs -->
 		
-		<extension point="cerberusweb.ticket.tab">
+		<extension point="cerberusweb.ui.context.profile.tab">
 			<id>spamanalysis.tab.ticket</id>
 			<name>Spam Analysis Tab</name>
 			<class>
@@ -37,6 +37,11 @@
 			</class>
 			<params>
 				<param key="uri" value="spam_analysis" />
+				<param key="contexts">
+					<value>
+						<data key="cerberusweb.contexts.ticket" />
+					</value>
+				</param>
 				<param key="title" value="spamanalysis.ui" />
 			</params>
 		</extension>

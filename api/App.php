@@ -47,9 +47,13 @@
  *	 WEBGROUP MEDIA LLC. - Developers of Cerberus Helpdesk
  */
 
-class ChSpamAnalysisTicketTab extends Extension_TicketTab {
-	function showTab() {
-		@$ticket_id = DevblocksPlatform::importGPC($_REQUEST['ticket_id'],'integer',0);
+if (class_exists('Extension_ContextProfileTab')):
+class ChSpamAnalysisTicketTab extends Extension_ContextProfileTab {
+	function showTab($context, $context_id) {
+		if(0 != strcasecmp($context, CerberusContexts::CONTEXT_TICKET))
+			return;
+		
+		@$ticket_id = $context_id;
 		
 		$tpl = DevblocksPlatform::getTemplateService();
 
@@ -73,9 +77,5 @@ class ChSpamAnalysisTicketTab extends Extension_TicketTab {
 		
 		$tpl->display('devblocks:cerberusweb.spam_analysis::ticket_tab/index.tpl');
 	}
-	
-	function saveTab() {
-	}
 };
-
-?>
+endif;
