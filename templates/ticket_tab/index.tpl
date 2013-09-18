@@ -1,14 +1,14 @@
 <table cellpadding="5" cellspacing="0" border="0">
 <tr>
 <td style="padding-right:20px;" valign="top">
-	<h2>{$translate->_('spamanalysis.ui.analysis.original')|capitalize}</h2>
+	<h2>{'spamanalysis.ui.analysis.original'|devblocks_translate|capitalize}</h2>
 	{if !empty($words)}
 	<table cellspacing="0" cellpadding="3" border="0">
 		<tr>
-			<td><b>{$translate->_('spamanalysis.ui.word')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.probability')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.num_spam')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.num_nonspam')|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.word'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.probability'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.num_spam'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.num_nonspam'|devblocks_translate|capitalize}</b></td>
 		</tr>
 	{foreach from=$words item=word}
 		<tr>
@@ -28,19 +28,19 @@
 	{/foreach}
 	</table>
 	{else}
-		{$translate->_('spamanalysis.ui.no_data')}
+		{'spamanalysis.ui.no_data'|devblocks_translate}
 	{/if}
 </td>
 
 <td style="padding-left:20px;border-left:1px solid rgb(230,230,230);" valign="top">
-	<h2>{$translate->_('spamanalysis.ui.analysis.live')|capitalize} ({math equation="x*100" x=$analysis.probability format="%0.2f"}%)</h2>
+	<h2>{'spamanalysis.ui.analysis.live'|devblocks_translate|capitalize} ({math equation="x*100" x=$analysis.probability format="%0.2f"}%)</h2>
 	{if !empty($analysis.words)}
 	<table cellspacing="0" cellpadding="3" border="0">
 		<tr>
-			<td><b>{$translate->_('spamanalysis.ui.word')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.probability')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.num_spam')|capitalize}</b></td>
-			<td><b>{$translate->_('spamanalysis.ui.num_nonspam')|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.word'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.probability'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.num_spam'|devblocks_translate|capitalize}</b></td>
+			<td><b>{'spamanalysis.ui.num_nonspam'|devblocks_translate|capitalize}</b></td>
 		</tr>
 	{foreach from=$analysis.words item=word}
 		<tr>
@@ -60,7 +60,7 @@
 	{/foreach}
 	</table>
 	{else}
-		{$translate->_('spamanalysis.ui.not_enough_data')}
+		{'spamanalysis.ui.not_enough_data'|devblocks_translate}
 	{/if}
 </td>
 </tr>
