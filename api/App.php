@@ -23,7 +23,7 @@ class ChSpamAnalysisTicketTab extends Extension_ContextProfileTab {
 		
 		@$ticket_id = $context_id;
 		
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 
 		$ticket = DAO_Ticket::get($ticket_id);
 		$tpl->assign('ticket_id', $ticket_id);
