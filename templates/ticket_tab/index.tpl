@@ -32,6 +32,7 @@
 	{/if}
 </td>
 
+{if $analysis.probability}
 <td style="padding-left:20px;border-left:1px solid rgb(230,230,230);" valign="top">
 	<h2>{'spamanalysis.ui.analysis.live'|devblocks_translate|capitalize} ({math equation="x*100" x=$analysis.probability format="%0.2f"}%)</h2>
 	{if !empty($analysis.words)}
@@ -63,5 +64,6 @@
 		{'spamanalysis.ui.not_enough_data'|devblocks_translate}
 	{/if}
 </td>
+{/if}
 </tr>
 </table>
